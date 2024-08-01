@@ -1,0 +1,20 @@
+{
+  "files": {
+    "plugins/رد تلقائي1.js": [
+      {
+        "id": "98a93b95-fafa-4fbd-91ec-718d1eeae6e7",
+        "line": 6,
+        "version": 1,
+        "index": 150
+      }
+    ],
+    "plugins/هل.js": [
+      {
+        "id": "e21ade13-d39e-4560-a129-643b2e489898",
+        "line": 11,
+        "version": 159,
+        "index": 328
+      }
+    ]
+  }
+}
