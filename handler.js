@@ -1468,11 +1468,11 @@ ${tradutor.texto1[1]} ${messageNumber}/3
           m.exp += xp;
         }
         if (!isPrems && plugin.limit && global.db.data.users[m.sender].limit < plugin.limit * 1) {
-          mconn.conn.reply(m.chat, `${tradutor.texto2} _${usedPrefix}buyall_`, m);
+          this.reply(m.chat, `*[❗تحذير❗] ليس لديك عملات كفايه لاستخدام الأمر لمعرفه المزيد اطلب [ .المتجر ]`, m);
           continue;
         }
         if (plugin.level > _user.level) {
-          mconn.conn.reply(m.chat, `${tradutor.texto3[0]} ${plugin.level} ${tradutor.texto3[1]} ${_user.level}, ${tradutor.texto3[2]} ${usedPrefix}lvl ${tradutor.texto3[3]}`, m);
+          this.reply(m.chat, `*[❗تحذير❗] عليك الوصول الي لفل ${plugin.level} لفلك الحالي هوا ${_user.level}*`, m);
           continue;
         }
         const extra = {
@@ -1541,7 +1541,7 @@ ${tradutor.texto1[1]} ${messageNumber}/3
             }
           }
           if (m.limit) {
-            m.reply(`${tradutor.texto4[0]} ` + +m.limit + ` ${tradutor.texto4[1]}`);
+            m.reply(+m.limit + '_*تــم اسـتـ🪙ـخـدامـهـم مـن عـمـلات*_');
           }
         }
         break;
@@ -1741,40 +1741,39 @@ export async function deleteUpdate(message) {
     if (!chat?.antidelete) return
     if (!msg) return
     if (!msg?.isGroup) return
-    const antideleteMessage = `${tradutor.texto1[0]}
-${tradutor.texto1[1]} @${participant.split`@`[0]}
-${tradutor.texto1[2]} ${time}
-${tradutor.texto1[3]} ${date}\n
-${tradutor.texto1[4]}
-${tradutor.texto1[5]}`.trim();
-    await mconn.conn.sendMessage(msg.chat, { text: antideleteMessage, mentions: [participant] }, { quoted: msg })
-    mconn.conn.copyNForward(msg.chat, msg).catch(e => console.log(e, msg))
-  } catch (e) {
-    console.error(e)
-  }
+    const antideleteMessage = `
+┏━━━━━━━━━⬣  مضاد الحذف  ⬣━━━━━━━━━
+*■ المستخدم:* @${participant.split`@`[0]}
+*■ الساعه:* ${time}
+*■ التاريخ:* ${date}
+*■ ارسال الرساله المحذوفة...*
+
+*■ لتعطيل هذا الامر, استعمل هذا الامر:*
+*—◉ #اقفل مضادالحذف*
+┗━━━━━━━━━⬣  مضاد الحذف  ⬣━━━━━━━━━`.trim();
+    await this.sendMessage(msg.chat, {text: antideleteMessage, mentions: [participant]}, {quoted: msg})
+        this.copyNForward(msg.chat, msg).catch(e => console.log(e, msg))
+    } catch (e) {
+        console.error(e)
+    }
 }
 
 global.dfail = (type, m, conn) => {
-  const datas = global
-  const idioma = datas.db.data.users[m.sender].language || 'es';
-  const _translate = JSON.parse(fs.readFileSync(`./language/${idioma}.json`))
-  const tradutor = _translate.handler.dfail
-
   const msg = {
-    rowner: tradutor.texto1,
-    owner: tradutor.texto2,
-    mods: tradutor.texto3,
-    premium: tradutor.texto4,
-    group: tradutor.texto5,
-    private: tradutor.texto6,
-    admin: tradutor.texto7,
-    botAdmin: tradutor.texto8,
-    unreg: tradutor.texto9,
-    restrict: tradutor.texto10,
+    rowner: '╮───────────────╭ـ\n│ *➣ الميزه دي للمطور بس! ┇❌*\n╯───────────────╰ـ',
+      owner: '╮───────────────╭ـ\n│ *➣ الميزه دي للمطور بس! ┇❌*\n╯───────────────╰ـ',
+      mods: '╮───────────────╭ـ\n│ *➣ الميزه دي لمالك البوت فقط! ┇❌*\n╯───────────────╰ـ',
+      premium: '╮───────────────╭ـ\n│ *➣ الميزه دي للأعضاء البريميوم فقط! ┇❌*\n╯───────────────╰ـ',
+      group: '╮───────────────╭ـ\n│ *➣ الميزه دي في الجروبات فقط! ┇❌*\n╯───────────────╰ـ',
+      private: '╮───────────────╭ـ\n│ *➣ الميزه دي في الخاص  فقط! ┇❌*\n╯───────────────╰ـ',
+      admin: '╮───────────────╭ـ\n│ *➣ الميزه دي للادمنز - المشرفين فقط! ┇❌*\n╯───────────────╰ـ',
+      botAdmin: '╮───────────────╭ـ\n│ *➣ ارفع البوت ادمن الاول! ┇❌*\n╯───────────────╰ـ',
+      unreg: '*[ لحظة !! انت مش مسجل ]*\n\n*『 سجل الامر عشان تفعله 』*\n*➣ #تفعيل الاسم.السن\n*➣مثل : #تفعيل اليكس.14',
+      restrict: '*╮───────────────╭ـ\n│ *➣ تم الغاء الأمر من قبل المطور! ┇👑*\n╯───────────────╰ـ',
   }[type];
-  const aa = { quoted: m, userJid: conn.user.jid };
-  const prep = generateWAMessageFromContent(m.chat, { extendedTextMessage: { text: msg, contextInfo: { externalAdReply: { title: tradutor.texto11[0], body: tradutor.texto11[1], thumbnail: imagen1, sourceUrl: tradutor.texto11[2] } } } }, aa);
-  if (msg) return conn.relayMessage(m.chat, prep.message, { messageId: prep.key.id });
+  const aa = {quoted: m, userJid: conn.user.jid};
+  const prep = generateWAMessageFromContent(m.chat, {extendedTextMessage: {text: msg, contextInfo: {externalAdReply: {title: '[ ⚠ ] دعوه - للجروب', body: 'ᴛʜᴇ ᴍʏsᴛɪᴄ - ʙᴏᴛ', thumbnail: imagen1, sourceUrl: 'https://chat.whatsapp.com/Bu7cwDjLYwLJ93yyUD1tE1'}}}}, aa);
+  if (msg) return conn.relayMessage(m.chat, prep.message, {messageId: prep.key.id});
 };
 
 const file = global.__filename(import.meta.url, true);
@@ -1782,12 +1781,4 @@ watchFile(file, async () => {
   unwatchFile(file);
   console.log(chalk.redBright('Update \'handler.js\''));
   if (global.reloadHandler) console.log(await global.reloadHandler());
-
-  if (global.conns && global.conns.length > 0) {
-    const users = [...new Set([...global.conns.filter((conn) => conn.user && conn.ws.socket && conn.ws.socket.readyState !== ws.CLOSED).map((conn) => conn)])];
-    for (const userr of users) {
-      userr.subreloadHandler(false)
-    }
-  }
-
 });
