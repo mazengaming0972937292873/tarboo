@@ -65,11 +65,11 @@
 [![blog](https://img.shields.io/badge/Tutorial-FF0000?style=for-the-badge&logo=youtube&logoColor=white)
 ](https://youtu.be/c9RCnOV418E?si=kNWog_fSi8wCWX3A)
 
-<a href="https://dash.infinity-wa.com"><img src="https://qu.ax/TPhh.jpg" height="125px"></a>
+<a href="https://dash.infinitywa-host.com"><img src="https://qu.ax/TPhh.jpg" height="125px"></a>
 
 - Página: [`Click aqui`](https://infinity-wa.com)
-- Dashboard: [`Aquí`](https://dash.infinity-wa.com)
-- Panel: [`Aquí`](https://panel.infinity-wa.com)
+- Dashboard: [`Aquí`](https://dash.infinitywa-host.com)
+- Panel: [`Aquí`](https://panel.infinitywa-host.com)
 - Grupo de WhatsApp: [`Aquí`](https://chat.whatsapp.com/GQ82mPnSYnm0XL2hLPk7FV)
 - Canal de WhatsApp: [`Aquí`](https://whatsapp.com/channel/0029Va4QjH7DeON0ePwzjS1A)
 
@@ -117,7 +117,6 @@
 
 ## `▢ COLABORADORES DEL BOT` 
 
-<a href="https://github.com/matias-crypto"><img src="https://github.com/matias-crypto.png" width="100" height="100" alt="unptoadrih15"/></a>
 <a href="https://github.com/unptoadrih15"><img src="https://github.com/unptoadrih15.png" width="100" height="100" alt="unptoadrih15"/></a>
 <a href="https://github.com/ALBERTO9883"><img src="https://github.com/ALBERTO9883.png" width="100" height="100" alt="ALBERTO9883"/></a>
 <a href="https://github.com/ferhacks"><img src="https://github.com/ferhacks.png" width="100" height="100" alt="ferhacks"/></a>
@@ -140,6 +139,8 @@
 <a href="https://github.com/jeffersonalionco"><img src="https://github.com/jeffersonalionco.png" width="100" height="100" alt="Alba070503"/> </a>
 <a href="https://instagram.com/nm9h"><img src="https://telegra.ph/file/7580886a1d41b35b51e38.jpg" width="100" height="100" alt="Saad"/> </a>
 <a href="https://github.com/BK9dev"><img src="https://i.imgur.com/NAVoDeW.jpeg" width="100" height="100" alt="BK9"/> </a>
+<a href="https://github.com/matias-crypto"><img src="https://github.com/matias-crypto.png" width="100" height="100" alt="unptoadrih15"/></a>
+
 
 ## `▢ AGRADECIMIENTOS & CREDITOS` 
 <div><button id="boton" type="button">games-wabot-md by BochilGaming </button></div>
