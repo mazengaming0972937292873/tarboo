@@ -25,11 +25,14 @@ conn.ev.on('group-participants.update', async (update) => {
             console.error('Error sending the audio message on group join:', e);
         }
     }
-});
+};
 
+// دي كلمات المساعدة والأوسمة الخاصة بالأمر
 handler.help = ['notification'];
 handler.tags = ['notification'];
-handler.command = ['احلي_تحية_لأحلي_جروب', 'احلي جروب', 'احلي تحية', 'تحية'];
-handler.customPrefix = /^(احلي جروب|تحية|احلي تحية)$/i;
+
+// دي الكلمات اللي الكود هيتفاعل معاها
+handler.customPrefix = /احلي جروب|تحية|احلي تحية/i;
 handler.command = new RegExp;
+
 export default handler;

@@ -5,9 +5,12 @@ let handler = async (m, { conn, usedPrefix, __dirname, text, isPrems }) => {
     conn.sendMessage(m.chat, {audio: {url: vn}, ptt: true, mimetype: 'audio/mpeg', fileName: `نعم.mp3`}, {quoted: m});
 };
 
+// دي كلمات المساعدة والأوسمة الخاصة بالأمر
 handler.help = ['notification']
 handler.tags = ['notification']
-handler.command = ['نعم'] 
-handler.customPrefix = /^(نعم)$/i;
+
+// دي الكلمات اللي الكود هيتفاعل معاها
+handler.customPrefix = /نعم/i;
 handler.command = new RegExp;
+
 export default handler

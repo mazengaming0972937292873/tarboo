@@ -5,9 +5,12 @@ let handler = async (m, { conn, usedPrefix, __dirname, text, isPrems }) => {
     conn.sendMessage(m.chat, {audio: {url: vn}, ptt: true, mimetype: 'audio/mpeg', fileName: `النت خرا.mp3`}, {quoted: m});
 };
 
+// دي كلمات المساعدة والأوسمة الخاصة بالأمر
 handler.help = ['notification']
 handler.tags = ['notification']
-handler.command = ['كسم وي', 'كسم النت', 'بيحمل', 'النت تعبان', 'النت بطيء', 'النت مش شغال', 'النت خرا', 'النت', 'الويفاي', 'we', 'الداتا', 'الشبكه'] 
-handler.customPrefix = /^(كسم وي|كسم النت|بيحمل|النت تعبان|النت بطيء|النت مش شغال|النت خرا|النت|الويفاي|we|الداتا|الشبكه)$/i;
+
+// دي الكلمات اللي الكود هيتفاعل معاها
+handler.customPrefix = /كسم وي|كسم النت|بيحمل|النت تعبان|النت بطيء|النت مش شغال|النت خرا|النت|الويفاي|we|الداتا|الشبكه/i;
 handler.command = new RegExp;
+
 export default handler
